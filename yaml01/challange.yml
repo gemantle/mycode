@@ -1,0 +1,10 @@
+---
+ - hosts: localhost
+   gather_facts: true
+
+   tasks:
+    - name: "looping through ansible variables"
+      debug:
+        msg: "Debug module allows us to print to the screen --> {{ item }}"
+      with_items:
+      - "{{ansible_all_ipv6_addresses}}"
