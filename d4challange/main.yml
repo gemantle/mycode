@@ -1,3 +1,4 @@
 ---
 - name: echo somthing as a test  
   shell: "echo ' this shoudl be saved in {{ ansible_ssh_user }}' >> /home/{{ansible_ssh_user}}/mytestfile.txt"
+
