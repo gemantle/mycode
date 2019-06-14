@@ -1,0 +1,15 @@
+---
+- name: iss challange
+  hosts: localhost
+  gather_facts: false
+
+  vars:
+    issloc: "{{ lookup('url', 'http://api.open-notify.org/iss-now.json') }}"
+
+  tasks:
+  - name: iss location
+    debug:
+      msg: "The ISS is at {{ item }}"
+    loop:
+    - "{{ issloc.iss_position.latitude }}"
+    - "{{ issloc.iss_position.longitude }}"  
